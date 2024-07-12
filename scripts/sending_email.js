@@ -1,8 +1,10 @@
-emailjs.init({
-  publicKey: "bTKXYHZT7dJxrYq1A",
-})
-
-function notify() {
+;(function () {
+  emailjs.init({
+    publicKey: "bTKXYHZT7dJxrYq1A",
+  })
+})()
+function notify(e) {
+  e.preventDefault()
   emailjs
     .send("service_tqreypl", "template_ldp58ue", {
       from_name: document.getElementById("name").value,

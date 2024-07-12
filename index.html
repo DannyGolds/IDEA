@@ -293,17 +293,15 @@
                   <input
                     type="text"
                     class="form__input"
-                    id="mail"v
+                    id="mail"
+                    v
                     placeholder="Почта"
                   />
                   <button
                     class="form__btn"
                     id="fBtn"
                     type="submit"
-                    onsubmit="(e) => {
-                    e.preventDefault()
-                    notify()
-                  }"
+                    onclick="notify(e)"
                   >
                     Отправить
                   </button>
