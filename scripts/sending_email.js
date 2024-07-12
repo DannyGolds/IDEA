@@ -11,7 +11,10 @@ function notify(e) {
       from_tel: document.getElementById("number").value,
       from_mail: document.getElementById("mail").value,
     })
-    .then((res) => {
-      alert("Успешно!" + res)
+    .then((res, err) => {
+      console.log("Успешно!" + res)
+    })
+    .catch((err) => {
+      console.error(err)
     })
 }
