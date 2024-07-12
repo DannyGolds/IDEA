@@ -339,14 +339,13 @@
       </section>
     </div>
     <script>
-      fBtn.onclick = function notify(e) {
+      fBtn.onclick = (e) => {
         e.preventDefault()
         emailjs.init({
           publicKey: "e745fgc8aGJIpB_cK",
         })
 
-        emailjs
-          .send("service_5jhztzi", "template_ldp58ue", {
+        emailjs.send("service_5jhztzi", "template_ldp58ue", {
             from_name: document.getElementById("name").value,
             from_tel: document.getElementById("number").value,
             from_mail: document.getElementById("mail").value,
@@ -355,7 +354,7 @@
             console.log("Успешно!" + res)
           })
           .catch((err) => {
-            console.error(err)
+            console.error("Ошибка отправления!" + err)
           })
       }
     </script>
