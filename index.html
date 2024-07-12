@@ -294,7 +294,7 @@
                     id="mail"
                     placeholder="Почта"
                   />
-                  <button class="form__btn" id="fBtn" onclick="notify(e)">
+                  <button class="form__btn" id="fBtn" onclick="() => notify(e)">
                     Отправить
                   </button>
                 </form>
@@ -341,13 +341,12 @@
       </section>
     </div>
     <script>
-      ;(function () {
+      function notify(e) {
+        e.preventDefault()
         emailjs.init({
           publicKey: "bTKXYHZT7dJxrYq1A",
         })
-      })()
-      function notify(e) {
-        e.preventDefault()
+
         emailjs
           .send("service_5jhztzi", "template_ldp58ue", {
             from_name: document.getElementById("name").value,
