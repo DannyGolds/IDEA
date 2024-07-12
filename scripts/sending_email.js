@@ -1,13 +1,5 @@
 emailjs.init({
   publicKey: "bTKXYHZT7dJxrYq1A",
-  // Do not allow headless browsers
-  blockHeadless: true,
-  limitRate: {
-    // Set the limit rate for the application
-    id: "app",
-    // Allow 1 request per 10s
-    throttle: 10000,
-  },
 })
 
 function notify() {
