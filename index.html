@@ -10,8 +10,16 @@
     <link rel="stylesheet" href="./styles/main.css" />
     <script
       type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
+    <script type="text/javascript">
+      ;(function () {
+        emailjs.init({
+          publicKey: "e745fgc8aGJIpB_cK"
+        })
+      })()
+    </script>
+
     <title>One posotion</title>
   </head>
   <body id="body" class="style-body">
@@ -338,26 +346,7 @@
         </div>
       </section>
     </div>
-    <script>
-      fBtn.onclick = (e) => {
-        e.preventDefault()
-        emailjs.init({
-          publicKey: "e745fgc8aGJIpB_cK",
-        })
-
-        emailjs.send("service_5jhztzi", "template_ldp58ue", {
-            from_name: document.getElementById("name").value,
-            from_tel: document.getElementById("number").value,
-            from_mail: document.getElementById("mail").value,
-          })
-          .then((res, err) => {
-            console.log("Успешно!" + res)
-          })
-          .catch((err) => {
-            console.error("Ошибка отправления!" + err)
-          })
-      }
-    </script>
     <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/sending_email.js"></script>
   </body>
 </html>
