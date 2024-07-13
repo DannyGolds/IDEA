@@ -17,6 +17,7 @@ fBtn.onclick = (ev) => {
       phoneRegex
     ) &&
     Array.from(document.getElementById("postForm"))[2].value.match(mailRegex)
+    && Array.from(document.getElementById("postForm"))[0].value && Array.from(document.getElementById("postForm"))[2].value && Array.from(document.getElementById("postForm"))[2].value 
   ) {
     emailjs
       .sendForm(serviceID, templateID, document.getElementById("postForm"))
