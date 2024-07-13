@@ -433,6 +433,36 @@ body {
   filter: brightness(70%);
 }
 
+.notify {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  transform: scale(0);
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid white;
+  right: 20px;
+  top: 20px;
+  transition: all 0.3s ease 500ms;
+}
+
+.notify.access,
+.notify.error {
+  visibility: visible;
+  transform: scale(1);
+}
+
+.notify.access {
+  background-color: rgb(63, 196, 63);
+}
+
+.notify.error {
+  background-color: #bd3030;
+}
+
 .find {
   position: absolute;
   height: 100%;
@@ -452,6 +482,7 @@ body {
 
 .find__form {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 450px;
   height: auto;
